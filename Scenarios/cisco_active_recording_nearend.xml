@@ -9,7 +9,7 @@
 
       INVITE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: "2000" <sip:2000@[local_ip]:[local_port]>;x-nearend;x-refci=30383469;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=30383470;x-farendclusterid=UCS-11;x-farenddevice=sippfarend;x-farendaddr=2001>;tag=[pid]SIPpTag09[call_number]
+      From: "2000" <sip:2000@[local_ip]:[local_port]>;x-nearend;x-refci=30383469;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=30383470;x-farendclusterid=UCS-11;x-farenddevice=sippfarend;x-farendaddr=2001;tag=[pid]SIPpTag09[call_number]
       To: [service] <sip:[service]@[remote_ip]:[remote_port]>
       Call-ID: [call_id]
       CSeq: 1 INVITE
@@ -37,7 +37,7 @@
 
       ACK sip:[service]@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: "2000" <sip:2000@[local_ip]:[local_port]>;x-nearend;x-refci=30383469;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=30383470;x-farendclusterid=UCS-11;x-farenddevice=sippfarend;x-farendaddr=2001>;tag=[pid]SIPpTag09[call_number]
+      From: "2000" <sip:2000@[local_ip]:[local_port]>;x-nearend;x-refci=30383469;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=30383470;x-farendclusterid=UCS-11;x-farenddevice=sippfarend;x-farendaddr=2001;tag=[pid]SIPpTag09[call_number]
       To: [service] <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 1 ACK
@@ -64,7 +64,7 @@
   <!-- Play a pre-recorded PCAP file (RTP stream)                       -->
   <nop>
     <action>
-      <exec play_pcap_audio="c:\Users\michal.propilek\GitHub\Sipp\Scenarios\pcap\g711a.pcap"/>
+	    <exec play_pcap_audio="pcap/g711a.pcap"/>
     </action>
   </nop>
 
@@ -78,7 +78,7 @@
 
       BYE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: "2000" <sip:2000@[local_ip]:[local_port]>;x-nearend;x-refci=30383469;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=30383470;x-farendclusterid=UCS-11;x-farenddevice=sippfarend;x-farendaddr=2001>;tag=[pid]SIPpTag09[call_number]
+      From: "2000" <sip:2000@[local_ip]:[local_port]>;x-nearend;x-refci=30383469;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=30383470;x-farendclusterid=UCS-11;x-farenddevice=sippfarend;x-farendaddr=2001;tag=[pid]SIPpTag09[call_number]
       To: [service] <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 2 BYE
