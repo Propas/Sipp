@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
-LOOP_LIMIT=$1
+sudo ~/sipp/sipp 10.17.7.16:5060 -sf ~/projects/Sipp/Scenarios/cisco_active_recording_nearend.xml -s 599919 -r 1 -rp 2000 -m 5 -bg
+sudo ~/sipp/sipp 10.17.7.16:5060 -sf ~/projects/Sipp/Scenarios/cisco_active_recording_farend.xml -s 599919 -r 1 -rp 2000 -m 5 -bg
 
-for (( VAR = 0; VAR <= ${LOOP_LIMIT}; ++VAR )); do
-    sudo ~/sipp/sipp 10.17.7.16:5060 -sf ~/projects/Sipp/Scenarios/cisco_active_recording_nearend.xml -s ${LOOP_LIMIT} -m 1 -bg
-    sudo ~/sipp/sipp 10.17.7.16:5060 -sf ~/projects/Sipp/Scenarios/cisco_active_recording_farend.xml -s ${LOOP_LIMIT} -m 1 -bg
-    sleep 1000;
-done
 
 
