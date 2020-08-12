@@ -24,7 +24,7 @@ usage()
   echo "  -h  Help"
 }
 
-while getopts "i:p:d:s:c:p:m:h" opt; do
+while getopts "i:p:d:s:c:r:m:h" opt; do
 	case ${opt} in
 	  i)
 	    IPADDR="${OPTARG}";;
