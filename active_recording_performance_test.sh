@@ -8,7 +8,15 @@ CALLS_PER_SECONDS=10
 RATE_PERIOD=1
 MAX_CALL_COUNT=1000
 
-usage() { echo "Usage: $0 -s <SERVICE_NUMBER> -c <CALLS_PER_SECONDS> -p [-v <RATE_PERIOD>] [-m <MAX_CALL_COUNT>] [-h <HELP>]"; }
+usage()
+{
+  echo "Usage: $0: [-s|c|p|m] - Default -s 599919 -c 10 -p 1 -m 1000. 10 calls every 1 sec up to 1000 calls"
+  echo "-s  service number is paste to 'to header' in sip"
+  echo "-c  calls per second"
+  echo "-p  rate period"
+  echo "-m  max call count"
+  echo "-h  help"
+}
 
 while getopts ":scpmh" opt; do
 	case ${opt} in
