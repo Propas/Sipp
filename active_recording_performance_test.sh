@@ -17,7 +17,7 @@ usage()
   echo "  -h  help"
 }
 
-while getopts ":scpmh" opt; do
+while getopts "s:c:p:m:h" opt; do
 	case ${opt} in
 	  s)
 		  SERVICE_NUMBER="${OPTARG}";;
