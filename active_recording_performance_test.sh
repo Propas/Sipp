@@ -3,7 +3,7 @@
 IPADDR=
 PORT=5060
 SIPP=~/sipp/sipp
-DIR=~/sipp/docs/scenarios/
+DIR=~/sipp/docs/
 NEAREND_FILE=cisco_active_recording_nearend.xml
 FAREND_FILE=cisco_active_recording_farend.xml
 SERVICE_NUMBER=599919
