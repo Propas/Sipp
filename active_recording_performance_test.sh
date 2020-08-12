@@ -13,10 +13,10 @@ MAX_CALL_COUNT=100
 
 usage()
 {
-  echo "Usage: $0: [-i|p|d|s|c|r|m|h] - sipp must by installed in ~/sipp. Pcap files put to ~/sipp/pcap directory"
+  echo "Usage: $0: [-i|p|d|s|c|r|m|h] - sipp must by installed in ~/sipp. Pcap files put to ~/sipp/pcap directory or one directory above scenario directory."
   echo "  -i  IP address"
   echo "  -p  Port. Default: 5060"
-  echo "  -d  Path to directory with scenarios. Default: ~/sipp/docs/scenarios/"
+  echo "  -d  Path to directory with scenarios. Default: ~/sipp/docs/"
   echo "  -s  Service number is paste to 'to header' in sip. Default: 599919"
   echo "  -c  Calls per second. Default 1."
   echo "  -p  Rate period in milliseconds. Default: 1000ms"
