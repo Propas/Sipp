@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 SERVICE_NUMBER=599919
 CALLS_PER_SECONDS=10
 RATE_PERIOD=1000
