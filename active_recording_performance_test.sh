@@ -13,7 +13,7 @@ MAX_CALL_COUNT=100
 
 usage()
 {
-  echo "Usage: $0: [-i|p|d|s|c|r|m|h] - sipp must by installed in ~/sipp"
+  echo "Usage: $0: [-i|p|d|s|c|r|m|h] - sipp must by installed in ~/sipp. Pcap files put to ~/sipp/pcap directory"
   echo "  -i  IP address"
   echo "  -p  Port. Default: 5060"
   echo "  -d  Path to directory with scenarios. Default: ~/sipp/docs/scenarios/"
