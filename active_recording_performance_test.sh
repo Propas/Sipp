@@ -2,7 +2,8 @@
 
 IPADDR=
 PORT=5060
-DIR=docs/scenarios/
+SIPP=~/sipp/sipp
+DIR=~/sipp/docs/scenarios/
 NEAREND_FILE=cisco_active_recording_nearend.xml
 FAREND_FILE=cisco_active_recording_farend.xml
 SERVICE_NUMBER=599919
@@ -12,10 +13,10 @@ MAX_CALL_COUNT=100
 
 usage()
 {
-  echo "Usage: $0: [-i|p|d|s|c|r|m|h] - run this script in sipp directory"
+  echo "Usage: $0: [-i|p|d|s|c|r|m|h] - sipp must by installed in ~/sipp"
   echo "  -i  IP address"
   echo "  -p  Port. Default: 5060"
-  echo "  -d  Path to directory with scenarios. Default: sipp/docs/scenarios/"
+  echo "  -d  Path to directory with scenarios. Default: ~/sipp/docs/scenarios/"
   echo "  -s  Service number is paste to 'to header' in sip. Default: 599919"
   echo "  -c  Calls per second. Default 1."
   echo "  -p  Rate period in milliseconds. Default: 1000ms"
@@ -52,8 +53,8 @@ while getopts "i:p:d:s:c:p:m:h" opt; do
     esac
 done
 
-sudo sipp "${IPADDR}":"${PORT}" -sf "${DIR}""${NEAREND_FILE}" -s "${SERVICE_NUMBER}" -r "${CALLS_PER_SECONDS}" -rp "${RATE_PERIOD}" -m "${MAX_CALL_COUNT}" -bg
-sudo sipp "${IPADDR}":"${PORT}" -sf "${DIR}""${FAREND_FILE}" -s "${SERVICE_NUMBER}" -r "${CALLS_PER_SECONDS}" -rp "${RATE_PERIOD}" -m "${MAX_CALL_COUNT}" -bg
+sudo "${SIPP}" "${IPADDR}":"${PORT}" -sf "${DIR}""${NEAREND_FILE}" -s "${SERVICE_NUMBER}" -r "${CALLS_PER_SECONDS}" -rp "${RATE_PERIOD}" -m "${MAX_CALL_COUNT}" -bg
+sudo "${SIPP}" "${IPADDR}":"${PORT}" -sf "${DIR}""${FAREND_FILE}" -s "${SERVICE_NUMBER}" -r "${CALLS_PER_SECONDS}" -rp "${RATE_PERIOD}" -m "${MAX_CALL_COUNT}" -bg
 
 
 
