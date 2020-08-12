@@ -8,7 +8,7 @@ CALLS_PER_SECONDS=10
 RATE_PERIOD=1
 MAX_CALL_COUNT=1000
 
-usage() { error "Usage: $0 -s <SERVICE_NUMBER> -c <CALLS_PER_SECONDS> -p [-v <RATE_PERIOD>] [-m <MAX_CALL_COUNT>] [-h <HELP>]"; }
+usage() { echo "Usage: $0 -s <SERVICE_NUMBER> -c <CALLS_PER_SECONDS> -p [-v <RATE_PERIOD>] [-m <MAX_CALL_COUNT>] [-h <HELP>]"; }
 
 while getopts ":scpmh" opt; do
 	case ${opt} in
