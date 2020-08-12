@@ -1,27 +1,41 @@
 #!/usr/bin/env bash
 
+IPADDR=
+PORT=5060
+DIR=docs/scenarios/
+NEAREND_FILE=cisco_active_recording_nearend.xml
+FAREND_FILE=cisco_active_recording_farend.xml
 SERVICE_NUMBER=599919
-CALLS_PER_SECONDS=10
+CALLS_PER_SECONDS=1
 RATE_PERIOD=1000
-MAX_CALL_COUNT=1000
+MAX_CALL_COUNT=100
 
 usage()
 {
-  echo "Usage: $0: [-s|c|p|m|h] - Default -s 599919 -c 10 -p 1000 -m 100. 10 calls every 1 sec up to 100 calls"
-  echo "  -s  service number is paste to 'to header' in sip"
-  echo "  -c  calls per second"
-  echo "  -p  rate period in milliseconds"
-  echo "  -m  max call count"
-  echo "  -h  help"
+  echo "Usage: $0: [-i|p|d|s|c|r|m|h] - run this script in sipp directory"
+  echo "  -i  IP address"
+  echo "  -p  Port. Default: 5060"
+  echo "  -d  Path to directory with scenarios. Default: sipp/docs/scenarios/"
+  echo "  -s  Service number is paste to 'to header' in sip. Default: 599919"
+  echo "  -c  Calls per second. Default 1."
+  echo "  -p  Rate period in milliseconds. Default: 1000ms"
+  echo "  -m  Max call count. Default: 100"
+  echo "  -h  Help"
 }
 
-while getopts "s:c:p:m:h" opt; do
+while getopts "i:p:d:s:c:p:m:h" opt; do
 	case ${opt} in
+	  i)
+	    IPADDR="${OPTARG}";;
+	  p)
+	    PORT="${OPTARG}";;
+	  d)
+	    DIR="${OPTARG}";;
 	  s)
 		  SERVICE_NUMBER="${OPTARG}";;
 	  c)
 		  CALLS_PER_SECONDS="${OPTARG}";;
-	  p)
+	  r)
 		  RATE_PERIOD="${OPTARG}";;
 	  m)
 		  MAX_CALL_COUNT="${OPTARG}";;
@@ -38,8 +52,8 @@ while getopts "s:c:p:m:h" opt; do
     esac
 done
 
-sudo ~/sipp/sipp 10.17.7.16:5060 -sf ~/projects/Sipp/Scenarios/cisco_active_recording_nearend.xml -s "${SERVICE_NUMBER}" -r "${CALLS_PER_SECONDS}" -rp "${RATE_PERIOD}" -m "${MAX_CALL_COUNT}" -bg
-sudo ~/sipp/sipp 10.17.7.16:5060 -sf ~/projects/Sipp/Scenarios/cisco_active_recording_farend.xml -s "${SERVICE_NUMBER}" -r "${CALLS_PER_SECONDS}" -rp "${RATE_PERIOD}" -m "${MAX_CALL_COUNT}" -bg
+sudo sipp "${IPADDR}":"${PORT}" -sf "${DIR}""${NEAREND_FILE}" -s "${SERVICE_NUMBER}" -r "${CALLS_PER_SECONDS}" -rp "${RATE_PERIOD}" -m "${MAX_CALL_COUNT}" -bg
+sudo sipp "${IPADDR}":"${PORT}" -sf "${DIR}""${FAREND_FILE}" -s "${SERVICE_NUMBER}" -r "${CALLS_PER_SECONDS}" -rp "${RATE_PERIOD}" -m "${MAX_CALL_COUNT}" -bg
 
 
 
