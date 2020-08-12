@@ -53,6 +53,11 @@ while getopts "i:p:d:s:c:p:m:h" opt; do
     esac
 done
 
+if [[ -z "${IPADDR}" ]]; then
+  echo "IP address must be set"
+  exit 1
+fi
+
 sudo "${SIPP}" "${IPADDR}":"${PORT}" -sf "${DIR}""${NEAREND_FILE}" -s "${SERVICE_NUMBER}" -r "${CALLS_PER_SECONDS}" -rp "${RATE_PERIOD}" -m "${MAX_CALL_COUNT}" -bg
 sudo "${SIPP}" "${IPADDR}":"${PORT}" -sf "${DIR}""${FAREND_FILE}" -s "${SERVICE_NUMBER}" -r "${CALLS_PER_SECONDS}" -rp "${RATE_PERIOD}" -m "${MAX_CALL_COUNT}" -bg
 
