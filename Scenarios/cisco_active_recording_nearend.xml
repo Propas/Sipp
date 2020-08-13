@@ -64,13 +64,13 @@
   <!-- Play a pre-recorded PCAP file (RTP stream) -->
   <nop>
     <action>
-	    <exec play_pcap_audio="../pcap/g711a.pcap"/>
+	    <exec play_pcap_audio="../pcap/lowrider.pcap"/>
     </action>
   </nop>
 
   <!-- Pause 8 seconds, which is approximately the duration of the      -->
   <!-- PCAP file                                                        -->
-  <pause milliseconds="8000"/>
+  <pause milliseconds="180000"/>
 
   <!-- The 'crlf' option inserts a blank line in the statistics report. -->
   <send retrans="500">
