@@ -64,7 +64,7 @@
   <!-- Play a pre-recorded PCAP file (RTP stream)                       -->
   <nop>
     <action>
-      <exec play_pcap_audio="../pcap/lowrider.pcap"/>
+      <exec play_pcap_audio="../pcap/hakunamatata.pcap"/>
     </action>
   </nop>
 
