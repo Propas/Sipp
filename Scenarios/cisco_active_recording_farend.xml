@@ -9,7 +9,7 @@
 
       INVITE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: "2000" <sip:2000@[local_ip]:[local_port];x-nearend;x-refci=303[call_number]0;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=303[call_number]1;x-farendclusterid=UCS-11;x-farenddevice=sippfarend[call_number];x-farendaddr=[call_number]>;tag=[pid]SIPpTag09[call_number]
+      From: "2000" <sip:2000@[local_ip]:[local_port];x-farend;x-refci=303[call_number]0;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=303[call_number]1;x-farendclusterid=UCS-11;x-farenddevice=sippfarend[call_number];x-farendaddr=[call_number]>;tag=[pid]SIPpTag09[call_number]
       To: [service] <sip:[service]@[remote_ip]:[remote_port]>
       Call-ID: [call_id]
       CSeq: 1 INVITE
@@ -36,7 +36,7 @@
 
       ACK sip:[service]@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: "2000" <sip:2000@[local_ip]:[local_port];x-nearend;x-refci=303[call_number]0;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=303[call_number]1;x-farendclusterid=UCS-11;x-farenddevice=sippfarend[call_number];x-farendaddr=[call_number]>;tag=[pid]SIPpTag09[call_number]
+      From: "2000" <sip:2000@[local_ip]:[local_port];x-farend;x-refci=303[call_number]0;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=303[call_number]1;x-farendclusterid=UCS-11;x-farenddevice=sippfarend[call_number];x-farendaddr=[call_number]>;tag=[pid]SIPpTag09[call_number]
       To: [service] <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 1 ACK
@@ -78,7 +78,7 @@
 
       BYE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: "2000" <sip:2000@[local_ip]:[local_port];x-nearend;x-refci=303[call_number]0;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=303[call_number]1;x-farendclusterid=UCS-11;x-farenddevice=sippfarend[call_number];x-farendaddr=[call_number]>;tag=[pid]SIPpTag09[call_number]
+      From: "2000" <sip:2000@[local_ip]:[local_port];x-farend;x-refci=303[call_number]0;x-nearendclusterid=UCS-11;x-nearenddevice=sippnearend;x-nearendaddr=2000;x-farendrefci=303[call_number]1;x-farendclusterid=UCS-11;x-farenddevice=sippfarend[call_number];x-farendaddr=[call_number]>;tag=[pid]SIPpTag09[call_number]
       To: [service] <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 2 BYE
